@@ -16,7 +16,9 @@ import { SeedModule } from './seed/seed.module';
       { dbName: AppConfig().mongodb.name }
     ),
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'public')
+      rootPath: ( AppConfig().environment === 'dev' ) 
+                  ? join(__dirname, '..', 'public') 
+                  : join(__dirname, '.', 'public')
     }),
     MovieModule,
     CommonModule,

@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  movie-spa:
+    depends_on:
+      - db
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: moviespa-docker
+    container_name: movie-spa
+    restart: always
+    ports:
+      - "${PORT}:${PORT}"
+    environment:
+      NODE_ENV: ${NODE_ENV}
+      PORT: ${PORT}
+      MONGODB_HOST_URL: ${MONGODB_HOST_URL}
+      MONGODB_NAME: ${MONGODB_NAME}
+
+  db:
+    image: mongo:5
+    container_name: mongo-movies
+    restart: always
+    ports:
+      - 27017:27017
+    environment:
+      MONGODB_DATABASE: ${MONGODB_NAME}
+    volumes:
+      - ./mongo:/data/db

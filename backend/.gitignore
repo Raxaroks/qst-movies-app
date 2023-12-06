@@ -3,6 +3,7 @@
 
 # env files
 .env
+.env*
 
 # public folder
 /public
