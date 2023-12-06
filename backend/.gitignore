@@ -4,6 +4,9 @@
 # env files
 .env
 
+# public folder
+/public
+
 # compiled output
 /dist
 /node_modules

@@ -3,9 +3,10 @@ import { ConfigModule } from "@nestjs/config";
 import { MongooseModule } from '@nestjs/mongoose';
 import { AppConfig, JoiValidationSchema } from './config';
 import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { MovieModule } from './movie/movie.module';
 import { CommonModule } from './common/common.module';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { join } from 'path';
 @Module({
   imports: [
     ConfigModule.forRoot({ load: [AppConfig], validationSchema: JoiValidationSchema }),
@@ -13,10 +14,13 @@ import { CommonModule } from './common/common.module';
       AppConfig().mongodb.hostUrl,
       { dbName: AppConfig().mongodb.name }
     ),
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'public')
+    }),
     MovieModule,
     CommonModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [],
 })
 export class AppModule {}
