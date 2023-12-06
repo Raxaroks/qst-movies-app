@@ -1,0 +1,14 @@
+
+<div class="thumbnail" *ngIf="movie">
+	<img [src]="movie.imgUrl" alt="" />
+	<h2>{{ movie.title }}</h2>
+
+  <!-- movie description -->
+  <p>{{ movie.description }}</p>
+
+	<!-- button to go to movie details page -->
+  <a [routerLink]='detailsLink'>Details...</a>
+
+	<!-- button to add to watchlist -->
+  <app-watchlist-btn [id]="movie._id"></app-watchlist-btn>
+</div>

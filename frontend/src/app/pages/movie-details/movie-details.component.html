@@ -1,0 +1,46 @@
+<div class="movie-card" *ngIf="!loading && movie">
+  <div class="movie-card__container">
+    <!-- movie image -->
+    <img [src]="movie.imgUrl" alt="cover" class="movie-card__cover" />
+
+    <!-- upper section -->
+    <div class="movie-card__upper">
+      <div class="movie-card__upper-header d-flex">
+        <div class='movie-card__upper-header__title'>
+          {{ movie.title }}
+        </div>        
+
+        <div class='movie-card__upper-header__details'>
+          <div class="movie-card__upper-header__details-col">
+            <h2>Release date: {{ dateFormatted }}</h2>
+            <h3>Rating: {{ movie.rating }}</h3>
+            <h3>Duration: {{ durationStr }}</h3>
+          </div>
+          <div class="movie-card__upper-header__details-col">
+            <app-watchlist-btn [id]="movie._id"></app-watchlist-btn>
+          </div>          
+        </div>
+      </div>
+    </div>
+
+    <!-- lower section -->
+    <div class="movie-card__lower mt-2">
+      <div>
+        <div class="movie-card__lower-genre">
+          <span *ngFor="let genre of movie.genre"
+            class="movie-card__lower-genre__tag">{{ genre | titlecase }}</span>
+        </div>
+        <div class="movie-card__lower-description">
+          <p>{{ movie.description }}</p>
+        </div>
+      </div>
+
+      <div class='movie-card__lower-trailer d-flex'>
+        <h2>Trailer</h2>
+        <iframe width="560" height="315" 
+          [src]="sanitizedUrl" frameborder="0" 
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>

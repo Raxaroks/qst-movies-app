@@ -1,0 +1,137 @@
+.movie-card {
+	padding: 4rem 0;
+
+	&__container {
+    display: flex;
+    flex-direction: column;
+		margin: 0 auto;
+		width: 78rem;
+		background-color: #f5f5f5;
+		border-radius: 0.5rem;
+		position: relative;
+		box-shadow: var(--box-shadow-1);
+	}
+
+	&__cover {
+		position: absolute;
+		top: 14rem;
+		left: 4rem;
+    width: 20rem;
+		z-index: 2;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+	}
+
+	&__upper {
+    flex: 1;
+		height: 34rem;
+		margin: 0;
+		position: relative;
+		overflow: hidden;
+		z-index: 1;
+		border-top-left-radius: 0.5rem;
+		border-top-right-radius: 0.5rem;
+
+		&-header {
+      padding: 13.5rem 0 0 28rem;
+      flex-direction: column;
+
+      &__title {
+        font-size: 3rem;
+        color: white;
+        margin-bottom: .5rem;
+        position: relative;
+      }
+
+      &__details {
+        display: flex;
+        justify-content: space-between;
+
+        &-col {
+          color: whitesmoke;
+        }
+      }
+		}
+
+		&:before {
+			content: '';
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			overflow: hidden;
+			top: 0;
+			left: 0;
+			// background-color: black;
+      background-image: linear-gradient( 135deg, #3B2667 10%, #BC78EC 100%);
+
+			z-index: -1;
+
+			transform: skewY(-2.2deg);
+			transform-origin: 0 0;
+
+			//chrome antialias fix
+			-webkit-backface-visibility: hidden;
+		}
+	}
+
+	&__lower {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    bottom: 0rem;
+    height: 20rem;
+    line-height: 2.6rem;    
+    color: #888585;
+
+    &-genre {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding-left: 3rem;
+      padding-top: 12rem;
+      width: 22rem;
+      float: left;
+      text-align: center;
+
+      &__tag {
+        font-size: 1.2rem;
+        background: white;
+        border-radius: 1rem;
+        padding: .3rem .8rem;
+        margin: .4rem;
+        line-height: 3.5rem;
+        cursor: pointer;
+        transition: all .4s;
+
+        &:hover {
+          background-color: #ddd;
+        }
+      }
+    }
+
+    &-description {
+      font-size: 1.4rem;
+      overflow: auto;
+      padding-left: 3rem;
+      padding-top: 3rem;
+      width: 48rem;
+      float: left;
+    }
+
+    &-trailer {
+      flex-direction: column;
+      padding: 3rem 6rem;
+
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      iframe {
+        align-self: center;
+        margin: 2rem;
+      }
+    }
+	}
+}

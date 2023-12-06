@@ -1,0 +1,21 @@
+<nav class="sidebar">
+  <ul class='watchlist-nav'>
+    <h2>My watchlist</h2>
+
+    <ng-container *ngIf="items.length > 0; else elseTemplate">
+      <li class="watchlist-nav__item fs-14" *ngFor="let item of items">
+        <a class='watchlist-nav__link' [routerLink]='buildLink(item._id)'>{{ buildTitle(item) }}</a>
+      </li>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <h3 class='mt-1'>You don't have any items in your watchlist! </h3>
+    </ng-template>
+    
+
+    
+  </ul>
+  
+  <div class="sidebar__footer">
+    &copy; 2023 by Andrés Ornelas. All rights reserved.
+  </div>
+</nav>

@@ -1,0 +1,22 @@
+.spinner {
+	border: 1.6rem solid var(--color-blue);
+	border-radius: 50%;
+	border-top: 1.6rem solid var(--color-blue-light);
+	border-right: 1.6rem solid #619bee;
+	border-bottom: 1.6rem solid #96bff9;
+	border-left: 1.6rem solid #c9e0ff;
+  margin: 3rem;
+	width: 8rem;
+	height: 8rem;
+	-webkit-animation: spin 1.5s linear infinite;
+	animation: spin 1.5s linear infinite;
+}
+
+@-webkit-keyframes spin {
+	0% { -webkit-transform: rotate(0deg);	}
+	100% { -webkit-transform: rotate(360deg);	}
+}
+@keyframes spin {
+	0% { transform: rotate(0deg);	}
+	100% { transform: rotate(360deg); }
+}

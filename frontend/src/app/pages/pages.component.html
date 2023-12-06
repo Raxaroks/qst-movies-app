@@ -1,0 +1,12 @@
+
+<div id='app-wrapper' class='container'>
+  <app-header></app-header>
+
+  <div class="content">
+    <app-sidebar [items]="watchlist"></app-sidebar>
+
+    <main class="section-view">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>

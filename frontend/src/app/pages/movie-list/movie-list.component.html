@@ -1,0 +1,31 @@
+<div class="section-content">
+	<ng-container *ngIf="!loading; else elseTemplate">
+		<div class="list__actions" *ngIf="!loading" [formGroup]='form'>
+			<label class="list__actions-select">
+				<select formControlName='order'>
+					<option *ngFor="let opt of orders"
+            [value]="opt.key">{{ opt.value | titlecase }}</option>
+				</select>
+			</label>
+
+			<button class="list__actions-action__button bg-secondary-dark"
+				(click)="sortBy('title', order.value)">
+				Sort by title
+			</button>
+
+			<button	class="list__actions-action__button bg-primary-light"
+				(click)="sortBy('releaseDate', order.value)">
+				Sort by date
+			</button>
+		</div>
+		<span class="mt-1"></span>
+
+		<app-thumbnail
+			*ngFor="let movie of movies"
+			[movie]="movie"></app-thumbnail>
+	</ng-container>
+
+	<ng-template #elseTemplate>
+		<app-spinner *ngIf="loading"></app-spinner>
+	</ng-template>
+</div>

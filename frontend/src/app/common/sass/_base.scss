@@ -1,0 +1,49 @@
+
+:root {
+  // colors
+  --color-primary: #2E0249;
+  --color-primary-light: #570A57;
+
+  --color-secondary: #F806CC;
+  --color-secondary-light: #C850C0;
+  --color-secondary-dark: #A91079;
+
+  --color-tertiary: #27005D;
+
+  --color-grey-dark: #434549;
+  --color-grey-light: #EBEDEE;
+
+  --color-blue: #0042a4;
+  --color-blue-light: #4158D0;
+
+  --color-yellow-light: #FFCC70;
+
+  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, .3);
+  --box-shadow-1: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before
+*::after { box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 1rem === 10px | 100% === 16px
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  
+  background-color: var(--color-tertiary);
+
+  background-size: cover;
+  background-repeat: no-repeat; 
+  min-height: 100vh;
+}
