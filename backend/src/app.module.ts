@@ -7,6 +7,7 @@ import { MovieModule } from './movie/movie.module';
 import { CommonModule } from './common/common.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
+import { SeedModule } from './seed/seed.module';
 @Module({
   imports: [
     ConfigModule.forRoot({ load: [AppConfig], validationSchema: JoiValidationSchema }),
@@ -19,6 +20,7 @@ import { join } from 'path';
     }),
     MovieModule,
     CommonModule,
+    SeedModule,
   ],
   controllers: [AppController],
   providers: [],
