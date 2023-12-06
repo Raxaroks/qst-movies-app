@@ -9,7 +9,7 @@ FROM node:18-alpine3.15 as frontend-builder
 WORKDIR /app
 COPY --from=frontend-deps /app/node_modules ./node_modules
 COPY /frontend .
-RUN yarn build
+RUN yarn build:prod
 #################################################
 
 #### backend ####################################
